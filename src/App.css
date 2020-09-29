@@ -1,0 +1,9 @@
+p#error_login {
+  color: red;
+  margin: 0;
+}
+
+p#error_login::before {
+  display: inline;
+  content: '☹ '
+}
