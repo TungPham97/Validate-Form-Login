@@ -63,31 +63,31 @@ export default function SignIn() {
   //   }
   // }, [errors])
 
-  const validateInput = () => {
-    console.log(errors)
-    if (Object.keys(errors).length !== 0 && errors.constructor === Object) {
-      console.log(errors);
-      const errs = Object.keys(errors);
-      console.log(errs);
-      if (errs.length === 2) {
-        setErrEmail(true);
-        setErrPass(true);
-        return false;
-      } else {
-        errs.forEach(err => {
-          if (err === 'email') {
-            setErrEmail(true);
-            setErrPass(false);
-            return false;
-          } else {
-            setErrPass(true)
-            setErrEmail(false);
-            return false;
-          }
-        })
-      }
-    }
-  }
+  // const validateInput = () => {
+  //   console.log(errors)
+  //   if (Object.keys(errors).length !== 0 && errors.constructor === Object) {
+  //     console.log(errors);
+  //     const errs = Object.keys(errors);
+  //     console.log(errs);
+  //     if (errs.length === 2) {
+  //       setErrEmail(true);
+  //       setErrPass(true);
+  //       return false;
+  //     } else {
+  //       errs.forEach(err => {
+  //         if (err === 'email') {
+  //           setErrEmail(true);
+  //           setErrPass(false);
+  //           return false;
+  //         } else {
+  //           setErrPass(true)
+  //           setErrEmail(false);
+  //           return false;
+  //         }
+  //       })
+  //     }
+  //   }
+  // }
 
   const onSubmit = (data) => {
     console.log(data);
@@ -109,7 +109,7 @@ export default function SignIn() {
         <form onSubmit={handleSubmit(onSubmit)} className={classes.form} noValidate>
           <TextField
             error={errEmail}
-            inputRef={register({ required: true, pattern: patternEmail, validate: validateInput })}
+            inputRef={register({ required: true, pattern: patternEmail })}
             variant="outlined"
             margin="normal"
             required

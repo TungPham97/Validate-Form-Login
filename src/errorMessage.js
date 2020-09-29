@@ -23,10 +23,10 @@ export default function ErrorMessage(props) {
         return <p id='error_login'>Your password need minmium 6 charcaters</p>;
       case "pattern":
         return <p id='error_login'>Enter a valid email address</p>;
-      // case "min":
-      //   return <p>Minmium age is 18</p>;
-      // case "validate":
-      //   return <p>Username is already used</p>;
+      case "min":
+        return <p>Minmium age is 18</p>;
+      case "validate":
+        return <p>Username is already used</p>;
       default:
         return null;
     }
